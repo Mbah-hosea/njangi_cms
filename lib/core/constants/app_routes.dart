@@ -15,7 +15,8 @@ class AppRoutes {
 
   // ── Groups ────────────────────────────────────────────────
   static const String groupType   = '/group/type';
-  static const String createGroup = '/group/create';
+  static const String createGroup   = '/group/create';
+  static const String inviteMembers = '/group/invite';
 
   // ── Members ───────────────────────────────────────────────
   static const String members       = '/members';

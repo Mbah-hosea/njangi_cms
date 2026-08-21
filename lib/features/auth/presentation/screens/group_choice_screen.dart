@@ -10,13 +10,12 @@ class GroupChoiceScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.grey100,
-      // No back button — user must make a choice
       appBar: AppBar(
         title: const Text('Welcome'),
         automaticallyImplyLeading: false,
       ),
       body: SafeArea(
-        child: Padding(
+        child: SingleChildScrollView(        // ← fixes overflow
           padding: const EdgeInsets.all(24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,7 +23,7 @@ class GroupChoiceScreen extends StatelessWidget {
 
               const SizedBox(height: 24),
 
-              // ── Welcome Text ─────────────────────────────
+              // ── Welcome Text ───────────────────────────
               Text(
                 'What would you\nlike to do?',
                 style: AppTextStyles.displayMedium,
@@ -37,15 +36,15 @@ class GroupChoiceScreen extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 48),
+              const SizedBox(height: 40),
 
-              // ── Create a Group Card ───────────────────────
+              // ── Create a Group Card ────────────────────
               _buildChoiceCard(
                 context: context,
                 icon: Icons.add_business_rounded,
                 title: 'Create a Group',
                 description:
-                    'Start a new njangi, village association, welfare society or any community group.',
+                'Start a new njangi, village association, welfare society or any community group.',
                 buttonLabel: 'Create Group',
                 buttonColor: AppColors.primary,
                 onTap: () {
@@ -58,13 +57,13 @@ class GroupChoiceScreen extends StatelessWidget {
 
               const SizedBox(height: 16),
 
-              // ── Join a Group Card ─────────────────────────
+              // ── Join a Group Card ──────────────────────
               _buildChoiceCard(
                 context: context,
                 icon: Icons.group_add_rounded,
                 title: 'Join a Group',
                 description:
-                    'You were invited by a group admin. Check your pending invitations here.',
+                'You were invited by a group admin. Check your pending invitations here.',
                 buttonLabel: 'View My Invites',
                 buttonColor: AppColors.secondary,
                 buttonTextColor: AppColors.primary,
@@ -76,9 +75,9 @@ class GroupChoiceScreen extends StatelessWidget {
                 },
               ),
 
-              const Spacer(),
+              const SizedBox(height: 32),
 
-              // ── Bottom note ───────────────────────────────
+              // ── Bottom note ────────────────────────────
               Center(
                 child: Text(
                   'You can only join a group if an Admin has invited you.',
@@ -98,7 +97,6 @@ class GroupChoiceScreen extends StatelessWidget {
     );
   }
 
-  // Builds one choice card
   Widget _buildChoiceCard({
     required BuildContext context,
     required IconData icon,
@@ -128,7 +126,7 @@ class GroupChoiceScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
 
-          // ── Icon ──────────────────────────────────────
+          // ── Icon ────────────────────────────────────
           Container(
             width: 52,
             height: 52,
@@ -145,7 +143,7 @@ class GroupChoiceScreen extends StatelessWidget {
 
           const SizedBox(height: 16),
 
-          // ── Title ─────────────────────────────────────
+          // ── Title ───────────────────────────────────
           Text(
             title,
             style: AppTextStyles.headlineMedium,
@@ -153,7 +151,7 @@ class GroupChoiceScreen extends StatelessWidget {
 
           const SizedBox(height: 8),
 
-          // ── Description ───────────────────────────────
+          // ── Description ─────────────────────────────
           Text(
             description,
             style: AppTextStyles.bodyMedium.copyWith(
@@ -164,7 +162,7 @@ class GroupChoiceScreen extends StatelessWidget {
 
           const SizedBox(height: 20),
 
-          // ── Button ────────────────────────────────────
+          // ── Button ──────────────────────────────────
           SizedBox(
             width: double.infinity,
             height: 48,

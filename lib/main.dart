@@ -9,6 +9,8 @@ import 'features/auth/presentation/screens/profile_setup_screen.dart';
 import 'features/auth/presentation/screens/group_choice_screen.dart';
 import 'features/dashboard/presentation/screens/main_shell.dart';
 import 'features/groups/presentation/screens/group_type_screen.dart';
+import 'features/groups/presentation/screens/create_group_screen.dart';
+import 'features/groups/presentation/screens/invite_members_screen.dart';
 import 'features/groups/presentation/screens/join_group_screen.dart';
 
 void main() {
@@ -28,15 +30,17 @@ class NjangiApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       initialRoute: AppRoutes.splash,
       routes: {
-        AppRoutes.splash:       (context) => const SplashScreen(),
-        AppRoutes.onboarding:   (context) => const OnboardingScreen(),
-        AppRoutes.login:        (context) => const LoginScreen(),
-        AppRoutes.otp:          (context) => const OtpScreen(),
-        AppRoutes.profileSetup: (context) => const ProfileSetupScreen(),
-        AppRoutes.groupChoice:  (context) => const GroupChoiceScreen(),
-        AppRoutes.shell:        (context) => const MainShell(),
-        AppRoutes.groupType:    (context) => const GroupTypeScreen(),
-        AppRoutes.joinGroup:    (context) => const JoinGroupScreen(),
+        AppRoutes.splash:         (context) => const SplashScreen(),
+        AppRoutes.onboarding:     (context) => const OnboardingScreen(),
+        AppRoutes.login:          (context) => const LoginScreen(),
+        AppRoutes.otp:            (context) => const OtpScreen(),
+        AppRoutes.profileSetup:   (context) => const ProfileSetupScreen(),
+        AppRoutes.groupChoice:    (context) => const GroupChoiceScreen(),
+        AppRoutes.shell:          (context) => const MainShell(),
+        AppRoutes.groupType:      (context) => const GroupTypeScreen(),
+        AppRoutes.createGroup:    (context) => const CreateGroupScreen(),
+        AppRoutes.inviteMembers:  (context) => const InviteMembersScreen(),
+        AppRoutes.joinGroup:      (context) => const JoinGroupScreen(),
       },
     );
   }

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import 'dashboard_screen.dart';
+import '../../../members/presentation/screens/members_screen.dart';
 
-// ── Placeholder screens for tabs not built yet ──────────
+// ── Placeholder screens for tabs not built yet ────────────
 // We replace these one by one as we build each feature
 
 class _ActivityScreen extends StatelessWidget {
@@ -44,16 +45,7 @@ class _MembersScreen extends StatelessWidget {
   const _MembersScreen();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Members')),
-      body: Center(
-        child: Text(
-          'Members\nComing soon',
-          textAlign: TextAlign.center,
-          style: AppTextStyles.headlineMedium,
-        ),
-      ),
-    );
+    return const MembersScreen();
   }
 }
 
@@ -74,7 +66,7 @@ class _MoreScreen extends StatelessWidget {
   }
 }
 
-// ── Main Shell ───────────────────────────────────────────
+// ── Main Shell ────────────────────────────────────────────
 class MainShell extends StatefulWidget {
   const MainShell({super.key});
 
@@ -129,13 +121,10 @@ class _MainShellState extends State<MainShell> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Show the current tab screen
       body: IndexedStack(
         index: _currentIndex,
         children: _screens,
       ),
-
-      // Bottom navigation bar
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           color: AppColors.white,
@@ -157,7 +146,7 @@ class _MainShellState extends State<MainShell> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: List.generate(
                 _tabs.length,
-                (index) => _buildTabItem(index),
+                    (index) => _buildTabItem(index),
               ),
             ),
           ),
@@ -166,7 +155,6 @@ class _MainShellState extends State<MainShell> {
     );
   }
 
-  // Builds one tab button
   Widget _buildTabItem(int index) {
     bool isActive = _currentIndex == index;
     _TabItem tab = _tabs[index];
@@ -188,7 +176,6 @@ class _MainShellState extends State<MainShell> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // Tab icon
             Icon(
               isActive ? tab.activeIcon : tab.icon,
               color: isActive
@@ -197,7 +184,6 @@ class _MainShellState extends State<MainShell> {
               size: 24,
             ),
             const SizedBox(height: 4),
-            // Tab label
             Text(
               tab.label,
               style: AppTextStyles.caption.copyWith(
@@ -216,7 +202,7 @@ class _MainShellState extends State<MainShell> {
   }
 }
 
-// ── Tab data model ────────────────────────────────────────
+// ── Tab data model ─────────────────────────────────────────
 class _TabItem {
   final IconData icon;
   final IconData activeIcon;

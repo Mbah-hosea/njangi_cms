@@ -87,7 +87,7 @@ class _GroupTypeScreenState extends State<GroupTypeScreen> {
     if (_selectedTypeId == null) return;
     Navigator.pushNamed(
       context,
-      AppRoutes.createGroup,
+      AppRoutes.createGroup,       // ← was groupType
       arguments: _selectedTypeId,
     );
   }
