@@ -3,6 +3,9 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import 'dashboard_screen.dart';
 import '../../../members/presentation/screens/members_screen.dart';
+import '../../../notifications/presentation/screens/activity_feed_screen.dart';
+import '../../../notifications/presentation/screens/alerts_screen.dart';
+import 'more_screen.dart';
 
 // ── Placeholder screens for tabs not built yet ────────────
 // We replace these one by one as we build each feature
@@ -11,16 +14,7 @@ class _ActivityScreen extends StatelessWidget {
   const _ActivityScreen();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Activity')),
-      body: Center(
-        child: Text(
-          'Activity Feed\nComing soon',
-          textAlign: TextAlign.center,
-          style: AppTextStyles.headlineMedium,
-        ),
-      ),
-    );
+    return const ActivityFeedScreen();
   }
 }
 
@@ -28,16 +22,7 @@ class _AlertsScreen extends StatelessWidget {
   const _AlertsScreen();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Alerts')),
-      body: Center(
-        child: Text(
-          'Alerts\nComing soon',
-          textAlign: TextAlign.center,
-          style: AppTextStyles.headlineMedium,
-        ),
-      ),
-    );
+    return const AlertsScreen();
   }
 }
 
@@ -53,19 +38,9 @@ class _MoreScreen extends StatelessWidget {
   const _MoreScreen();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('More')),
-      body: Center(
-        child: Text(
-          'More Options\nComing soon',
-          textAlign: TextAlign.center,
-          style: AppTextStyles.headlineMedium,
-        ),
-      ),
-    );
+    return const MoreScreen();
   }
 }
-
 // ── Main Shell ────────────────────────────────────────────
 class MainShell extends StatefulWidget {
   const MainShell({super.key});
