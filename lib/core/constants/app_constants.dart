@@ -1,4 +1,4 @@
-/// All fixed values used across the app
+ /// All fixed values used across the app
 /// Change a value here = changes everywhere
 class AppConstants {
   // Private constructor — this class is never instantiated
